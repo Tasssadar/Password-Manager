@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, SpravceHeselActivity!</string>
-    <string name="app_name">Spravce Hesel</string>
+    <string name="hello">Hello, application is running!</string>
+    <string name="app_name">Password Manager</string>
+    <color name="blue">#0000FF</color>
+    <string name="text_pass">Textové heslo</string>
+    <string name="graph_pass">Grafické heslo</string>
+    <string name="both_pass">Obě hesla</string>
+    <string name="question_mark">\?</string>
+    <string name="desc">Default description</string>
 
 </resources>

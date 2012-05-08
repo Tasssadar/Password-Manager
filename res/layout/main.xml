@@ -4,30 +4,7 @@
     android:layout_height="wrap_content"
     android:layout_weight="0.02" >
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="53dp"
-        android:text="Obě hesla" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button3"
-        android:layout_alignParentLeft="true"
-        android:text="Grafické heslo" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button2"
-        android:layout_alignParentLeft="true"
-        android:text="Textové heslo" />
 
     <TextView
         android:id="@+id/textView2"
@@ -35,16 +12,85 @@
         android:layout_height="49dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_weight="0.04"
         android:text="@string/hello" />
-    <TextView
+
+    <TextView
         android:id="@+id/textView1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView2"
         android:layout_marginTop="57dp"
-        android:layout_weight="0.04"
-        android:text="TextView" />
+        android:text="" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="50dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.7"
+                android:onClick="buttonClicked"
+                android:text="@string/text_pass" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:contentDescription="@string/desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/quest_mark" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.7"
+                android:onClick="buttonClicked"
+                android:text="@string/graph_pass" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:contentDescription="@string/desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/quest_mark" />
+        </LinearLayout>
+
+		<LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.7"
+                android:onClick="buttonClicked"
+                android:text="@string/both_pass" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:contentDescription="@string/desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/quest_mark" />
+        </LinearLayout>
+	
+    </LinearLayout>
 
 </RelativeLayout>

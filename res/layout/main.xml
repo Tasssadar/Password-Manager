@@ -7,7 +7,7 @@
 
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/main_helloText"
         android:layout_width="fill_parent"
         android:layout_height="49dp"
         android:layout_alignParentLeft="true"
@@ -15,11 +15,11 @@
         android:text="@string/hello" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/main_midText"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@id/main_helloText"
         android:layout_marginTop="57dp"
         android:text="" />
 
@@ -34,21 +34,23 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" >
-
-            <Button
-                android:id="@+id/button1"
+           <Button
+                android:id="@+id/main_textPass"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="0.7"
                 android:onClick="buttonClicked"
                 android:text="@string/text_pass" />
-
+
             <ImageView
-                android:id="@+id/imageView1"
-                android:contentDescription="@string/desc"
+                android:id="@+id/main_textPassInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/quest_mark" />
+                android:layout_gravity="right"
+                android:contentDescription="@string/desc"
+                android:onClick="infoClicked"
+                android:src="@drawable/q_mark" />
+
         </LinearLayout>
         
         <LinearLayout
@@ -56,7 +58,7 @@
             android:layout_height="wrap_content" >
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/main_graphPass"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="0.7"
@@ -64,11 +66,13 @@
                 android:text="@string/graph_pass" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/main_graphPassInfo"
                 android:contentDescription="@string/desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/quest_mark" />
+                android:layout_gravity="right"
+                android:onClick="infoClicked"
+                android:src="@drawable/q_mark" />
         </LinearLayout>
 
 		<LinearLayout
@@ -76,7 +80,7 @@
             android:layout_height="wrap_content" >
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/main_bothPass"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="0.7"
@@ -84,11 +88,13 @@
                 android:text="@string/both_pass" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/main_bothPassInfo"
                 android:contentDescription="@string/desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/quest_mark" />
+                android:layout_gravity="right"
+                android:onClick="infoClicked"
+                android:src="@drawable/q_mark" />
         </LinearLayout>
 	
     </LinearLayout>

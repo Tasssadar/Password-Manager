@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="popup">
+        <item name="android:background">#444444</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">10dip</item>
+    </style>
+    <style name="title">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">22sp</item>
+        
+    </style>
+</resources>

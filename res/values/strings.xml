@@ -9,5 +9,11 @@
     <string name="both_pass">Obě hesla</string>
     <string name="question_mark">\?</string>
     <string name="desc">Default description</string>
+    <string name="ok">Aha</string>
+    <string name="info_text_pass">Toto je testovy heslo, vite co je testovy heslo? to je testovy heslo, heslo s textem v kterym je text a je ho tam hodne</string>
+    <string name="info_graph_pass">Toto je graficky heslo typico!</string>
+    <string name="info_both_pass">Todle zmackni kdyz budes chtit pouzit obe hesla neasi</string>
+    <string name="error">We apologize, error occured!</string>
+    <string name="confirm">Potvrdit</string>
 
 </resources>

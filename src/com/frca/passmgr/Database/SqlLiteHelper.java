@@ -1,4 +1,4 @@
-package com.frca.passmgr;
+package com.frca.passmgr.Database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -14,7 +14,7 @@ public class SqlLiteHelper extends SQLiteOpenHelper
 	private static final int DATABASE_VERSION = 1;
 
 	// Database creation SQL statement
-	private static final String DATABASE_CREATE = "CREATE TABLE " + TABLE_VARIABLES + "( "
+	private static final String DATABASE_CREATE = "CREATE TABLE IF NOT EXISTS " + TABLE_VARIABLES + "( "
 			+ VARIABLES_KEY + " text primary key, "
 			+ VARIABLES_VALUE + " text not null);";
 

@@ -1,4 +1,4 @@
-package com.frca.passmgr;
+package com.frca.passmgr.PasswordActivities;
 
 import android.app.Activity;
 

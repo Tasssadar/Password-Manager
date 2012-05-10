@@ -1,4 +1,4 @@
-package com.frca.passmgr;
+package com.frca.passmgr.Database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.util.HashMap;
 import java.util.Map;
+
 
 public class DbVariables
 {
@@ -41,7 +42,7 @@ public class DbVariables
 		// otherwise load from DB
 		Cursor cur = database.query(SqlLiteHelper.TABLE_VARIABLES, new String[] {SqlLiteHelper.VARIABLES_VALUE}, SqlLiteHelper.VARIABLES_KEY + " = \"" + key + "\"", null, null, null, null);
 		
-		if (!cur.moveToFirst())
+		if (!cur.moveToFirst() || cur.getString(0) == null ||cur.getString(0).equals(""))
 			return null;
 		
 		String value = cur.getString(0);
@@ -86,7 +87,7 @@ public class DbVariables
 		ContentValues data = new ContentValues();
 		data.put(SqlLiteHelper.VARIABLES_KEY, key);
 		data.put(SqlLiteHelper.VARIABLES_VALUE, value);
-		database.insert(SqlLiteHelper.TABLE_VARIABLES, null, data);
+		database.replace(SqlLiteHelper.TABLE_VARIABLES, null, data);
 	}
 	
     public void setVariable(String key, int value)

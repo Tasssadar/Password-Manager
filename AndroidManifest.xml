@@ -18,8 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="TextPasswordActivity"></activity>
+        <activity android:name=".PasswordActivities.TextPasswordActivity"></activity>
         <activity android:name="FirstUseActivity"></activity>
+        <activity android:name=".PasswordActivities.CreateTextPasswordActivity"></activity>
     </application>
 
 </manifest>

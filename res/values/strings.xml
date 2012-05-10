@@ -16,7 +16,10 @@
     <string name="error">We apologize, error occured!</string>
     <string name="confirm">Potvrdit</string>
     <string name="pass_input">Zadejte heslo</string>
-    <string name="pass_input_again">Zadejte znova heslo</string>
+    <string name="pass_input_again">Zadejte znova heslo pro kontrolu</string>
     <string name="textpass_alert">Musíte zadat heslo!</string>
+    <string name="pass_input_new">Zadejte nové heslo</string>
+    <string name="logged">You are logged in!</string>
+    <string name="textpass_notmatch">Hesla neslouhlasí!</string>
 
 </resources>

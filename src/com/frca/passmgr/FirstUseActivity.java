@@ -1,43 +1,71 @@
 package com.frca.passmgr;
 
 import com.frca.passmgr.R;
-import com.frca.passmgr.PasswordPopupWindow;
+import com.frca.passmgr.Constants.C;
+import com.frca.passmgr.Database.DbVariables;
+import com.frca.passmgr.PasswordActivities.CreateTextPasswordActivity;
+import com.frca.passmgr.PasswordActivities.GraphicPasswordActivity;
+
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Button;
-import android.view.LayoutInflater;
-import android.widget.PopupWindow;
 
-public class FirstUseActivity extends Activity {
+public class FirstUseActivity extends Activity
+{
+	private int selectedType = 0;
+	
 	/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-    }
-    
-    private int selectedType;
+        setContentView(R.layout.first_use_main);
+    }    
     
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
     	super.onActivityResult(requestCode, resultCode, data);
-    	if (resultCode != RESULT_OK)
-    		return;
     	
-    	if (requestCode == 1)
+    	boolean doFinish = false;
+    	Intent intent = getIntent();
+    	if (requestCode == 1)		// text password
     	{
-			Intent tempIntent = new Intent(this, TextPasswordActivity.class);
-			tempIntent.putExtra("isRepeate", true);
-			startActivityForResult(tempIntent, 2);
-    	}
+    		if (resultCode == RESULT_OK)
+    		{
+        		DbVariables vars = new DbVariables(this);
+        		vars.open();
 
+        		vars.setVariable(C.TEXT_PASS_HASH, data.getStringExtra(C.TEXT_PASS_HASH));      		
+
+        		if (selectedType == 3)
+            	{
+            		Intent tempIntent = new Intent(this, GraphicPasswordActivity.class);
+            		startActivityForResult(tempIntent, 2);
+            	}
+        		else
+        			doFinish = true;
+    		}
+    		else if (resultCode == RESULT_CANCELED)
+    			C.ShowAlert(this, R.string.textpass_notmatch, R.string.ok, 0);
+    	}
+    	else if (requestCode == 2)	// graphic password
+    	{
+    		if (resultCode == RESULT_OK)
+    		{
+    			DbVariables vars = new DbVariables(this);
+    			vars.open();
+    			vars.setVariable(C.GRAP_PASS_HASH, intent.getStringExtra("passwordHash"));
+    			doFinish = true;
+    		}    		
+    	}
+    	
+    	if (doFinish)
+    	{
+    		setResult(RESULT_OK, intent);
+    		finish();
+    	}
     }
 
     public void buttonClicked(View v)
@@ -47,59 +75,48 @@ public class FirstUseActivity extends Activity {
 	    	case R.id.main_textPass:
 	    	{
 	    		selectedType = 1;
-	    		Intent tempIntent = new Intent(this, TextPasswordActivity.class);
-	    		tempIntent.putExtra("isRepeate", false);
+	    		Intent tempIntent = new Intent(this, CreateTextPasswordActivity.class);
 	    		startActivityForResult(tempIntent, 1);
 	    		break;
 	    	}
 	    	case R.id.main_graphPass:
+	    	{
 	    		selectedType = 2;
-	    		//popupText.setText(this.getString(R.string.info_graph_pass));
+	    		Intent tempIntent = new Intent(this, GraphicPasswordActivity.class);
+	    		startActivityForResult(tempIntent, 2);
 	    		break;
+	    	}
 	    	case R.id.main_bothPass:
+	    	{
 	    		selectedType = 3;
-	    		//popupText.setText(this.getString(R.string.info_both_pass));
+	    		Intent tempIntent = new Intent(this, CreateTextPasswordActivity.class);
+	    		startActivityForResult(tempIntent, 1);
 	    		break;
+	    	}
 	  		default:
-	  			//popupText.setText(this.getString(R.string.error));
 	   			break;
     	}
     }
     
-    private PopupWindow pw;
-    public void infoClicked(View v) {
-    	LayoutInflater inflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-    	View layout = inflater.inflate(R.layout.popup_info, null, false);
-    	pw = new PopupWindow(layout, 500, 500, true);
-    	TextView popupText = (TextView)layout.findViewById(R.id.popup_text);
+    public void infoClicked(View v)
+    {
+    	int messageId;
     	switch(v.getId())
     	{
-    	case R.id.main_textPassInfo:
-    		popupText.setText(this.getString(R.string.info_text_pass));
-    		break;
-    	case R.id.main_graphPassInfo:
-    		popupText.setText(this.getString(R.string.info_graph_pass));
-    		break;
-    	case R.id.main_bothPassInfo:
-    		popupText.setText(this.getString(R.string.info_both_pass));
-    		break;
-  		default:
-  			popupText.setText(this.getString(R.string.error));
-   			break;
+    		case R.id.main_textPassInfo:
+    			messageId = R.string.info_text_pass;
+    			break;
+    		case R.id.main_graphPassInfo:
+    			messageId = R.string.info_graph_pass;
+    			break;
+	    	case R.id.main_bothPassInfo:
+	    		messageId = R.string.info_both_pass;
+	    		break;
+	  		default:
+	  			messageId = 0;
+	   			break;
     	}
-    	pw.showAtLocation(this.findViewById(R.id.main_midText), Gravity.CENTER, 0, 0); 
-    }
-    
-    public void popupDismiss(View v) {
-    	if (pw != null)
-    		pw.dismiss();
-    }
-    
-    public void popupConfirm(View v) {
-    	if (pw == null)
-    		return;
     	
-    	PasswordPopupWindow ppw = (PasswordPopupWindow)pw;
-    	ppw.nextStage();
+    	C.ShowAlert(this, messageId, R.string.ok, 0);
     }
 }

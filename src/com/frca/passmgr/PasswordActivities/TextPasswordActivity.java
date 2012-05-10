@@ -20,15 +20,15 @@ public class TextPasswordActivity extends Activity
     
     public void confirmCall(View v)
     {
-    	EditText mEdit = (EditText)findViewById(R.id.textpass_pass);
-    	if (mEdit.getText().toString().equals(""))
-    	{
-    		C.ShowAlert(this, R.string.textpass_alert, R.string.ok, 0);
-    		return;
-    	}
-    	Intent intent = getIntent();    	
-    	intent.putExtra(C.TEXT_PASS_HASH, C.hashText(mEdit.getText().toString()));
-    	setResult(RESULT_OK, intent);
-    	finish();
+        EditText mEdit = (EditText)findViewById(R.id.textpass_pass);
+        if (mEdit.getText().toString().equals(""))
+        {
+            C.ShowAlert(this, R.string.textpass_alert, R.string.ok, 0);
+            return;
+        }
+        Intent intent = getIntent();
+        intent.putExtra(C.TEXT_PASS_HASH, C.hashText(mEdit.getText().toString()));
+        setResult(RESULT_OK, intent);
+        finish();
     }
 }

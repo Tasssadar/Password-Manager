@@ -7,7 +7,7 @@
     </style>
     <style name="title">
         <item name="android:textColor">#FFFFFF</item>
-        <item name="android:typeface">monospace</item>
+        <item name="android:typeface">sans</item>
         <item name="android:gravity">center</item>
         <item name="android:textSize">22sp</item>
         

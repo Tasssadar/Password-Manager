@@ -73,6 +73,7 @@ public class PasswordPopupWindow extends PopupWindow
 	
 	void constructTextStage()
 	{
+
 		
 	}
 	

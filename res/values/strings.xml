@@ -15,5 +15,8 @@
     <string name="info_both_pass">Todle zmackni kdyz budes chtit pouzit obe hesla neasi</string>
     <string name="error">We apologize, error occured!</string>
     <string name="confirm">Potvrdit</string>
+    <string name="pass_input">Zadejte heslo</string>
+    <string name="pass_input_again">Zadejte znova heslo</string>
+    <string name="textpass_alert">Musíte zadat heslo!</string>
 
 </resources>

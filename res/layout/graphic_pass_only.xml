@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/grappass_whole"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+        
+	    <ImageView android:id="@+id/Y1X1" style="@style/grappass_button"/>
+	    <ImageView android:id="@+id/Y1X2" style="@style/grappass_button"/>
+	    <ImageView android:id="@+id/Y1X3" style="@style/grappass_button"/>
+	    <ImageView android:id="@+id/Y1X4" style="@style/grappass_button"/>
+	    <ImageView android:id="@+id/Y1X5" style="@style/grappass_button"/>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+        
+	    <ImageView android:id="@+id/Y2X1" style="@style/grappass_button"/>
+	    <ImageView android:id="@+id/Y2X2" style="@style/grappass_button"/>
+	    <ImageView android:id="@+id/Y2X3" style="@style/grappass_button"/>
+	    <ImageView android:id="@+id/Y2X4" style="@style/grappass_button"/>
+	    <ImageView android:id="@+id/Y2X5" style="@style/grappass_button"/>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+        
+	    <ImageView android:id="@+id/Y3X1" style="@style/grappass_button"/>
+	    <ImageView android:id="@+id/Y3X2" style="@style/grappass_button"/>
+	    <ImageView android:id="@+id/Y3X3" style="@style/grappass_button"/>
+	    <ImageView android:id="@+id/Y3X4" style="@style/grappass_button"/>
+	    <ImageView android:id="@+id/Y3X5" style="@style/grappass_button"/>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+        
+	    <ImageView android:id="@+id/Y4X1" style="@style/grappass_button"/>
+	    <ImageView android:id="@+id/Y4X2" style="@style/grappass_button"/>
+	    <ImageView android:id="@+id/Y4X3" style="@style/grappass_button"/>
+	    <ImageView android:id="@+id/Y4X4" style="@style/grappass_button"/>
+	    <ImageView android:id="@+id/Y4X5" style="@style/grappass_button"/>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+        
+	    <ImageView android:id="@+id/Y5X1" style="@style/grappass_button"/>
+	    <ImageView android:id="@+id/Y5X2" style="@style/grappass_button"/>
+	    <ImageView android:id="@+id/Y5X3" style="@style/grappass_button"/>
+	    <ImageView android:id="@+id/Y5X4" style="@style/grappass_button"/>
+	    <ImageView android:id="@+id/Y5X5" style="@style/grappass_button"/>
+    </LinearLayout>
+</LinearLayout>

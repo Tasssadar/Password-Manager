@@ -12,4 +12,12 @@
         <item name="android:textSize">22sp</item>
         
     </style>
+    <style name="grappass_button">
+	    <item name="android:contentDescription">@string/desc</item>
+	    <item name="android:layout_width">fill_parent</item>
+	    <item name="android:layout_height">fill_parent</item>
+	    <item name="android:layout_weight">0.2</item>
+	    <item name="android:src">@android:drawable/btn_radio</item>
+	    <item name="android:padding">5px</item>
+    </style>
 </resources>
